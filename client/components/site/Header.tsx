@@ -24,15 +24,26 @@ export const Header = () => {
     >
       <div className="container flex h-16 items-center justify-between">
         <a href="#home" className="flex items-center gap-2">
-          <span className="text-xl md:text-2xl font-semibold tracking-wide" style={{fontFamily: 'Playfair Display, serif'}}>
+          <span
+            className="text-xl md:text-2xl font-semibold tracking-wide"
+            style={{ fontFamily: "Playfair Display, serif" }}
+          >
             Sweta Makeover
           </span>
         </a>
         <nav className="hidden md:flex items-center gap-6 text-sm">
-          <a href="#services" className="hover:text-primary">Services</a>
-          <a href="#gallery" className="hover:text-primary">Gallery</a>
-          <a href="#about" className="hover:text-primary">About</a>
-          <a href="#contact" className="hover:text-primary">Contact</a>
+          <a href="#services" className="hover:text-primary">
+            Services
+          </a>
+          <a href="#gallery" className="hover:text-primary">
+            Gallery
+          </a>
+          <a href="#about" className="hover:text-primary">
+            About
+          </a>
+          <a href="#contact" className="hover:text-primary">
+            Contact
+          </a>
         </nav>
         <div className="flex items-center gap-2">
           <BookingDialog>
@@ -42,7 +53,10 @@ export const Header = () => {
               </Button>
             </DialogTrigger>
           </BookingDialog>
-          <Link to="/auth" className="ml-2 inline-flex items-center gap-2 text-sm hover:text-primary">
+          <Link
+            to="/auth"
+            className="ml-2 inline-flex items-center gap-2 text-sm hover:text-primary"
+          >
             <User className="h-5 w-5" />
             <span className="hidden sm:inline">Sign In</span>
           </Link>

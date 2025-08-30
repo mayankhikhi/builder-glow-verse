@@ -14,16 +14,31 @@ export const InstagramGrid = () => {
     <section id="gallery" className="container py-20">
       <div className="flex items-end justify-between mb-8">
         <div>
-          <h2 className="text-3xl md:text-4xl font-semibold" style={{fontFamily: 'Playfair Display, serif'}}>Instagram</h2>
+          <h2
+            className="text-3xl md:text-4xl font-semibold"
+            style={{ fontFamily: "Playfair Display, serif" }}
+          >
+            Instagram
+          </h2>
           <p className="text-muted-foreground">@sweta.goutam.7</p>
         </div>
-        <a href="https://www.instagram.com/sweta.goutam.7/" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.instagram.com/sweta.goutam.7/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <Button variant="outline">Open Instagram</Button>
         </a>
       </div>
       <div className="columns-2 md:columns-3 gap-4 [column-fill:_balance]">
         {images.map((src, i) => (
-          <img key={i} src={src} alt="Sweta Makeover work" className="mb-4 w-full rounded-lg border object-cover" loading="lazy" />
+          <img
+            key={i}
+            src={src}
+            alt="Sweta Makeover work"
+            className="mb-4 w-full rounded-lg border object-cover"
+            loading="lazy"
+          />
         ))}
       </div>
       <p className="text-xs text-muted-foreground mt-4">

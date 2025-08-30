@@ -5,18 +5,15 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const TESTIMONIALS = [
   {
     name: "Aarohi",
-    text:
-      "Absolutely loved my bridal look! The attention to detail and calm energy made the day perfect.",
+    text: "Absolutely loved my bridal look! The attention to detail and calm energy made the day perfect.",
   },
   {
     name: "Simran",
-    text:
-      "Professional, kind and super talented. The makeup lasted all night and looked stunning in photos!",
+    text: "Professional, kind and super talented. The makeup lasted all night and looked stunning in photos!",
   },
   {
     name: "Neha",
-    text:
-      "From hair to skin prep, everything was flawless. Highly recommended for any special occasion.",
+    text: "From hair to skin prep, everything was flawless. Highly recommended for any special occasion.",
   },
 ];
 
@@ -33,7 +30,12 @@ export const Testimonials = () => {
 
   return (
     <section className="container py-20">
-      <h2 className="text-3xl md:text-4xl font-semibold mb-8" style={{fontFamily: 'Playfair Display, serif'}}>What Clients Say</h2>
+      <h2
+        className="text-3xl md:text-4xl font-semibold mb-8"
+        style={{ fontFamily: "Playfair Display, serif" }}
+      >
+        What Clients Say
+      </h2>
       <div className="relative">
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex">
@@ -41,7 +43,9 @@ export const Testimonials = () => {
               <div key={i} className="min-w-0 flex-[0_0_100%] px-4">
                 <div className="rounded-xl border bg-card p-8 shadow">
                   <p className="text-lg leading-relaxed">“{t.text}”</p>
-                  <div className="mt-4 text-sm text-muted-foreground">— {t.name}</div>
+                  <div className="mt-4 text-sm text-muted-foreground">
+                    — {t.name}
+                  </div>
                 </div>
               </div>
             ))}
@@ -64,7 +68,10 @@ export const Testimonials = () => {
       </div>
       <div className="flex items-center justify-center gap-2 mt-4">
         {TESTIMONIALS.map((_, i) => (
-          <span key={i} className={`h-1.5 w-6 rounded-full ${i===selectedIndex ? 'bg-primary' : 'bg-muted'}`} />
+          <span
+            key={i}
+            className={`h-1.5 w-6 rounded-full ${i === selectedIndex ? "bg-primary" : "bg-muted"}`}
+          />
         ))}
       </div>
     </section>

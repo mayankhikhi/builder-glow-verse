@@ -102,24 +102,48 @@
 
   body {
     @apply bg-background text-foreground font-sans;
-    font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, Segoe UI,
-      Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family:
+      "Montserrat",
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Ubuntu,
+      Cantarell,
+      Noto Sans,
+      Arial,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol";
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: "Playfair Display", serif;
     letter-spacing: 0.01em;
   }
 }
 
 @layer components {
-  .rdp { color: hsl(var(--foreground)); }
-  .rdp button { color: inherit; }
-  .rdp-day_selected, .rdp-day_selected:focus-visible, .rdp-day_selected:hover {
+  .rdp {
+    color: hsl(var(--foreground));
+  }
+  .rdp button {
+    color: inherit;
+  }
+  .rdp-day_selected,
+  .rdp-day_selected:focus-visible,
+  .rdp-day_selected:hover {
     background: hsl(var(--primary));
     color: hsl(var(--primary-foreground));
   }
-  .rdp-caption_label { color: hsl(var(--foreground)); }
-  .rdp-head_cell { color: hsl(var(--muted-foreground)); }
+  .rdp-caption_label {
+    color: hsl(var(--foreground));
+  }
+  .rdp-head_cell {
+    color: hsl(var(--muted-foreground));
+  }
 }

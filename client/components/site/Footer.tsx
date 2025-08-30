@@ -5,7 +5,12 @@ export const Footer = () => {
     <footer className="border-t mt-24">
       <div className="container py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <h3 className="text-lg font-semibold" style={{fontFamily: 'Playfair Display, serif'}}>Sweta Makeover</h3>
+          <h3
+            className="text-lg font-semibold"
+            style={{ fontFamily: "Playfair Display, serif" }}
+          >
+            Sweta Makeover
+          </h3>
           <p className="text-sm text-muted-foreground mt-2">
             Crafting confidence, one makeover at a time.
           </p>
@@ -22,10 +27,26 @@ export const Footer = () => {
         <div>
           <h4 className="font-semibold mb-3">Quick Links</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="#services" className="hover:text-primary">Services</a></li>
-            <li><a href="#gallery" className="hover:text-primary">Gallery</a></li>
-            <li><a href="#about" className="hover:text-primary">About</a></li>
-            <li><a href="#contact" className="hover:text-primary">Contact</a></li>
+            <li>
+              <a href="#services" className="hover:text-primary">
+                Services
+              </a>
+            </li>
+            <li>
+              <a href="#gallery" className="hover:text-primary">
+                Gallery
+              </a>
+            </li>
+            <li>
+              <a href="#about" className="hover:text-primary">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="hover:text-primary">
+                Contact
+              </a>
+            </li>
           </ul>
         </div>
         <div>
