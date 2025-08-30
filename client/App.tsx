@@ -17,12 +17,14 @@ const App = () => {
   if (typeof document !== "undefined") {
     document.documentElement.classList.add("dark");
   }
+  const isGhPages = typeof location !== "undefined" && location.hostname.endsWith("github.io");
+  const Router: any = isGhPages ? HashRouter : BrowserRouter;
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <Router>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/auth" element={<Auth />} />
@@ -30,7 +32,7 @@ const App = () => {
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
+        </Router>
       </TooltipProvider>
     </QueryClientProvider>
   );
