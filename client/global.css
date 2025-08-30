@@ -112,3 +112,14 @@
     letter-spacing: 0.01em;
   }
 }
+
+@layer components {
+  .rdp { color: hsl(var(--foreground)); }
+  .rdp button { color: inherit; }
+  .rdp-day_selected, .rdp-day_selected:focus-visible, .rdp-day_selected:hover {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+  .rdp-caption_label { color: hsl(var(--foreground)); }
+  .rdp-head_cell { color: hsl(var(--muted-foreground)); }
+}
