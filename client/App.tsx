@@ -17,7 +17,8 @@ const App = () => {
   if (typeof document !== "undefined") {
     document.documentElement.classList.add("dark");
   }
-  const isGhPages = typeof location !== "undefined" && location.hostname.endsWith("github.io");
+  const isGhPages =
+    typeof location !== "undefined" && location.hostname.endsWith("github.io");
   const Router: any = isGhPages ? HashRouter : BrowserRouter;
   return (
     <QueryClientProvider client={queryClient}>
