@@ -1,7 +1,7 @@
 import "./global.css";
 
 import { Toaster } from "@/components/ui/toaster";
-import { createRoot } from "react-dom/client";
+import { createRoot, type Root } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -36,4 +36,21 @@ const App = () => {
   );
 };
 
-createRoot(document.getElementById("root")!).render(<App />);
+export default App;
+
+// Mount with singleton root to avoid duplicate createRoot during HMR
+const container = document.getElementById("root")!;
+// @ts-expect-error - attach to window for singleton
+const existingRoot: Root | undefined = (window as any).__appRoot;
+const root: Root = existingRoot ?? createRoot(container);
+// @ts-expect-error - save for next HMR pass
+(window as any).__appRoot = root;
+root.render(<App />);
+
+if (import.meta.hot) {
+  import.meta.hot.dispose(() => {
+    root.unmount();
+    // @ts-expect-error - cleanup
+    (window as any).__appRoot = undefined;
+  });
+}
