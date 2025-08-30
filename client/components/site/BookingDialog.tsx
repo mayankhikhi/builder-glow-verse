@@ -11,7 +11,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { DayPicker } from "react-day-picker";
-import "react-day-picker/dist/style.css";
 
 export type ServiceItem = {
   id: string;
