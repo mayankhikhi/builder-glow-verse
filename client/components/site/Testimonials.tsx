@@ -41,11 +41,10 @@ export const Testimonials = () => {
           <div className="flex">
             {TESTIMONIALS.map((t, i) => (
               <div key={i} className="min-w-0 flex-[0_0_100%] px-4">
-                <div className="rounded-xl border bg-card p-8 shadow">
+                <div className="rounded-2xl border border-white/10 bg-card/50 backdrop-blur p-8 shadow">
+                  <div className="h-1 w-16 rounded-full bg-gradient-to-r from-primary to-secondary mb-4" />
                   <p className="text-lg leading-relaxed">“{t.text}”</p>
-                  <div className="mt-4 text-sm text-muted-foreground">
-                    — {t.name}
-                  </div>
+                  <div className="mt-4 text-sm text-muted-foreground">— {t.name}</div>
                 </div>
               </div>
             ))}
@@ -54,14 +53,14 @@ export const Testimonials = () => {
         <button
           aria-label="Previous"
           onClick={() => emblaApi?.scrollPrev()}
-          className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border bg-background/70 p-2 backdrop-blur hover:bg-background"
+          className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-background/70 p-2 backdrop-blur hover:bg-background"
         >
           <ChevronLeft className="h-5 w-5" />
         </button>
         <button
           aria-label="Next"
           onClick={() => emblaApi?.scrollNext()}
-          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border bg-background/70 p-2 backdrop-blur hover:bg-background"
+          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-background/70 p-2 backdrop-blur hover:bg-background"
         >
           <ChevronRight className="h-5 w-5" />
         </button>
@@ -70,7 +69,7 @@ export const Testimonials = () => {
         {TESTIMONIALS.map((_, i) => (
           <span
             key={i}
-            className={`h-1.5 w-6 rounded-full ${i === selectedIndex ? "bg-primary" : "bg-muted"}`}
+            className={`h-1.5 w-6 rounded-full ${i === selectedIndex ? "bg-gradient-to-r from-primary to-secondary" : "bg-muted"}`}
           />
         ))}
       </div>
