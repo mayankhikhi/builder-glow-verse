@@ -72,16 +72,14 @@ export const ServicesSection = () => {
         >
           Our Services
         </h2>
-        <p className="text-muted-foreground">
-          Explore categories and book instantly.
-        </p>
+        <p className="text-muted-foreground">Explore categories and book instantly.</p>
       </div>
       <Accordion type="multiple" className="w-full">
         {SERVICES.map((s, idx) => (
           <AccordionItem
             key={idx}
             value={`item-${idx}`}
-            className="border rounded-lg mb-4"
+            className="border rounded-xl mb-4 bg-card/40 backdrop-blur-sm hover:border-white/20 transition"
           >
             <AccordionTrigger className="px-4">{s.category}</AccordionTrigger>
             <AccordionContent>
@@ -89,22 +87,16 @@ export const ServicesSection = () => {
                 {s.items.map((it, i) => (
                   <div
                     key={i}
-                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-md border p-3"
+                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-md border border-white/10 bg-background/40 p-3 hover:bg-background/60 transition"
                   >
                     <div>
-                      <div className="font-medium">{it.name}</div>
-                      <div className="text-sm text-muted-foreground">
-                        {it.desc}
-                      </div>
-                      <div className="text-xs text-muted-foreground">
-                        {it.duration} • {it.price}
-                      </div>
+                      <div className="font-medium" style={{ fontFamily: "Playfair Display, serif" }}>{it.name}</div>
+                      <div className="text-sm text-muted-foreground">{it.desc}</div>
+                      <div className="text-xs text-muted-foreground">{it.duration} • {it.price}</div>
                     </div>
                     <BookingDialog>
                       <DialogTrigger asChild>
-                        <Button className="bg-gradient-to-r from-primary to-secondary text-primary-foreground">
-                          Book Now
-                        </Button>
+                        <Button variant="gradient">Book Now</Button>
                       </DialogTrigger>
                     </BookingDialog>
                   </div>
