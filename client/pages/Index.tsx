@@ -60,7 +60,10 @@ export default function Index() {
         </section>
 
         {/* Featured Services */}
-        <section className="container py-20" aria-labelledby="featured-services">
+        <section
+          className="container py-20"
+          aria-labelledby="featured-services"
+        >
           <h2
             id="featured-services"
             className="text-3xl md:text-4xl font-semibold mb-12"
@@ -91,7 +94,10 @@ export default function Index() {
                 desc: "Glam that turns heads.",
               },
             ].map((s) => (
-              <div key={s.title} className="group rounded-2xl p-[1px] bg-gradient-to-br from-primary/50 via-secondary/40 to-transparent">
+              <div
+                key={s.title}
+                className="group rounded-2xl p-[1px] bg-gradient-to-br from-primary/50 via-secondary/40 to-transparent"
+              >
                 <div className="overflow-hidden rounded-2xl border border-white/10 bg-card/70 shadow transition-transform duration-300 group-hover:-translate-y-0.5">
                   <div className="aspect-[4/3] overflow-hidden">
                     <img
@@ -101,7 +107,12 @@ export default function Index() {
                     />
                   </div>
                   <div className="p-4">
-                    <div className="text-lg font-medium" style={{ fontFamily: "Playfair Display, serif" }}>{s.title}</div>
+                    <div
+                      className="text-lg font-medium"
+                      style={{ fontFamily: "Playfair Display, serif" }}
+                    >
+                      {s.title}
+                    </div>
                     <p className="text-sm text-muted-foreground">{s.desc}</p>
                     <div className="mt-4">
                       <BookingDialog>
@@ -124,7 +135,10 @@ export default function Index() {
         <Testimonials />
 
         {/* About */}
-        <section id="about" className="container py-20 grid md:grid-cols-2 gap-10 items-center">
+        <section
+          id="about"
+          className="container py-20 grid md:grid-cols-2 gap-10 items-center"
+        >
           <div className="rounded-2xl p-[1px] bg-gradient-to-br from-primary/40 via-secondary/30 to-transparent">
             <img
               src="https://images.unsplash.com/photo-1547789401-85a0d56a02b3?q=80&w=1200&auto=format&fit=crop"

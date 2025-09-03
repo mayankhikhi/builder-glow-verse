@@ -44,7 +44,9 @@ export const Testimonials = () => {
                 <div className="rounded-2xl border border-white/10 bg-card/50 backdrop-blur p-8 shadow">
                   <div className="h-1 w-16 rounded-full bg-gradient-to-r from-primary to-secondary mb-4" />
                   <p className="text-lg leading-relaxed">“{t.text}”</p>
-                  <div className="mt-4 text-sm text-muted-foreground">— {t.name}</div>
+                  <div className="mt-4 text-sm text-muted-foreground">
+                    — {t.name}
+                  </div>
                 </div>
               </div>
             ))}

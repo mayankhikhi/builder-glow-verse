@@ -72,7 +72,9 @@ export const ServicesSection = () => {
         >
           Our Services
         </h2>
-        <p className="text-muted-foreground">Explore categories and book instantly.</p>
+        <p className="text-muted-foreground">
+          Explore categories and book instantly.
+        </p>
       </div>
       <Accordion type="multiple" className="w-full">
         {SERVICES.map((s, idx) => (
@@ -90,9 +92,18 @@ export const ServicesSection = () => {
                     className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-md border border-white/10 bg-background/40 p-3 hover:bg-background/60 transition"
                   >
                     <div>
-                      <div className="font-medium" style={{ fontFamily: "Playfair Display, serif" }}>{it.name}</div>
-                      <div className="text-sm text-muted-foreground">{it.desc}</div>
-                      <div className="text-xs text-muted-foreground">{it.duration} • {it.price}</div>
+                      <div
+                        className="font-medium"
+                        style={{ fontFamily: "Playfair Display, serif" }}
+                      >
+                        {it.name}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {it.desc}
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        {it.duration} • {it.price}
+                      </div>
                     </div>
                     <BookingDialog>
                       <DialogTrigger asChild>

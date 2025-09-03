@@ -38,8 +38,8 @@ export const InstagramGrid = () => {
             alt="Sweta Makeover work"
             className="mb-4 w-full rounded-xl border border-white/10 object-cover transition-transform duration-300 hover:scale-[1.02]"
             loading="lazy"
-          />)
-        )}
+          />
+        ))}
       </div>
       <p className="text-xs text-muted-foreground mt-4">
         Tip: Connect Zapier to auto-sync your Instagram feed here.
