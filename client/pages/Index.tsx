@@ -19,31 +19,32 @@ export default function Index() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative min-h-[90vh] flex items-center">
+        <section className="relative min-h-[90vh] flex items-center overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=2000&auto=format&fit=crop"
             alt="Makeover in progress"
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
+          {/* Decorative gradient orbs */}
+          <div className="pointer-events-none absolute -top-24 -left-16 h-72 w-72 rounded-full bg-gradient-to-br from-primary/30 to-secondary/20 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-24 -right-16 h-72 w-72 rounded-full bg-gradient-to-tr from-secondary/30 to-primary/20 blur-3xl" />
+
           <div className="container relative z-10 py-28">
             <div className="max-w-2xl">
               <h1
-                className="text-4xl md:text-6xl font-semibold leading-tight"
+                className="text-4xl md:text-6xl font-semibold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-foreground/70 drop-shadow"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
                 Sweta Makeover
               </h1>
-              <p className="mt-4 text-lg text-muted-foreground max-w-xl">
+              <p className="mt-4 text-lg text-muted-foreground/90 max-w-xl">
                 Crafting confidence, one makeover at a time.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <BookingDialog>
                   <DialogTrigger asChild>
-                    <Button
-                      size="lg"
-                      className="bg-gradient-to-r from-primary to-secondary text-primary-foreground"
-                    >
+                    <Button size="lg" variant="gradient">
                       Book an Appointment
                     </Button>
                   </DialogTrigger>
@@ -59,13 +60,10 @@ export default function Index() {
         </section>
 
         {/* Featured Services */}
-        <section
-          className="container py-16"
-          aria-labelledby="featured-services"
-        >
+        <section className="container py-20" aria-labelledby="featured-services">
           <h2
             id="featured-services"
-            className="text-3xl md:text-4xl font-semibold mb-8"
+            className="text-3xl md:text-4xl font-semibold mb-12"
             style={{ fontFamily: "Playfair Display, serif" }}
           >
             Featured Services
@@ -93,28 +91,27 @@ export default function Index() {
                 desc: "Glam that turns heads.",
               },
             ].map((s) => (
-              <div
-                key={s.title}
-                className="group overflow-hidden rounded-xl border bg-card shadow"
-              >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={s.img}
-                    alt={s.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-4">
-                  <div className="text-lg font-medium">{s.title}</div>
-                  <p className="text-sm text-muted-foreground">{s.desc}</p>
-                  <div className="mt-4">
-                    <BookingDialog>
-                      <DialogTrigger asChild>
-                        <Button className="bg-gradient-to-r from-primary to-secondary text-primary-foreground w-full">
-                          Book Now
-                        </Button>
-                      </DialogTrigger>
-                    </BookingDialog>
+              <div key={s.title} className="group rounded-2xl p-[1px] bg-gradient-to-br from-primary/50 via-secondary/40 to-transparent">
+                <div className="overflow-hidden rounded-2xl border border-white/10 bg-card/70 shadow transition-transform duration-300 group-hover:-translate-y-0.5">
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={s.img}
+                      alt={s.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <div className="text-lg font-medium" style={{ fontFamily: "Playfair Display, serif" }}>{s.title}</div>
+                    <p className="text-sm text-muted-foreground">{s.desc}</p>
+                    <div className="mt-4">
+                      <BookingDialog>
+                        <DialogTrigger asChild>
+                          <Button variant="gradient" className="w-full">
+                            Book Now
+                          </Button>
+                        </DialogTrigger>
+                      </BookingDialog>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -127,15 +124,14 @@ export default function Index() {
         <Testimonials />
 
         {/* About */}
-        <section
-          id="about"
-          className="container py-20 grid md:grid-cols-2 gap-10 items-center"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1547789401-85a0d56a02b3?q=80&w=1200&auto=format&fit=crop"
-            alt="Sweta Goutam"
-            className="w-full rounded-xl border object-cover"
-          />
+        <section id="about" className="container py-20 grid md:grid-cols-2 gap-10 items-center">
+          <div className="rounded-2xl p-[1px] bg-gradient-to-br from-primary/40 via-secondary/30 to-transparent">
+            <img
+              src="https://images.unsplash.com/photo-1547789401-85a0d56a02b3?q=80&w=1200&auto=format&fit=crop"
+              alt="Sweta Goutam"
+              className="w-full rounded-2xl border border-white/10 object-cover"
+            />
+          </div>
           <div>
             <h2
               className="text-3xl md:text-4xl font-semibold mb-4"
@@ -167,28 +163,26 @@ export default function Index() {
             <form className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
-                  className="rounded-md border bg-muted/40 px-3 py-2"
+                  className="rounded-md border border-white/10 bg-muted/40 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:bg-background"
                   placeholder="Your name"
                 />
                 <input
                   type="email"
-                  className="rounded-md border bg-muted/40 px-3 py-2"
+                  className="rounded-md border border-white/10 bg-muted/40 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:bg-background"
                   placeholder="Email"
                 />
               </div>
               <input
-                className="rounded-md border bg-muted/40 px-3 py-2 w-full"
+                className="rounded-md border border-white/10 bg-muted/40 px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-primary/50 focus:bg-background"
                 placeholder="Subject"
               />
               <textarea
-                className="rounded-md border bg-muted/40 px-3 py-2 w-full h-32"
+                className="rounded-md border border-white/10 bg-muted/40 px-3 py-2 w-full h-32 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:bg-background"
                 placeholder="Message"
               />
-              <Button className="bg-gradient-to-r from-primary to-secondary">
-                Send Message
-              </Button>
+              <Button variant="gradient">Send Message</Button>
             </form>
-            <div className="rounded-xl overflow-hidden border min-h-[300px]">
+            <div className="rounded-2xl overflow-hidden border border-white/10 min-h-[300px]">
               <iframe
                 title="Map"
                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14233.178592973683!2d77.4126!3d23.2599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1710000000000"
