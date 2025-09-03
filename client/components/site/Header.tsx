@@ -19,36 +19,40 @@ export const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-colors ${
-        scrolled ? "bg-background/80 backdrop-blur border-b" : "bg-transparent"
+        scrolled
+          ? "bg-background/70 backdrop-blur-md border-b border-white/10"
+          : "bg-transparent"
       }`}
     >
       <div className="container flex h-16 items-center justify-between">
         <a href="#home" className="flex items-center gap-2">
           <span
-            className="text-xl md:text-2xl font-semibold tracking-wide"
+            className="text-xl md:text-2xl font-semibold tracking-wide drop-shadow-sm"
             style={{ fontFamily: "Playfair Display, serif" }}
           >
             Sweta Makeover
           </span>
         </a>
         <nav className="hidden md:flex items-center gap-6 text-sm">
-          <a href="#services" className="hover:text-primary">
-            Services
-          </a>
-          <a href="#gallery" className="hover:text-primary">
-            Gallery
-          </a>
-          <a href="#about" className="hover:text-primary">
-            About
-          </a>
-          <a href="#contact" className="hover:text-primary">
-            Contact
-          </a>
+          {[
+            { href: "#services", label: "Services" },
+            { href: "#gallery", label: "Gallery" },
+            { href: "#about", label: "About" },
+            { href: "#contact", label: "Contact" },
+          ].map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="relative text-foreground/80 hover:text-foreground transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+            >
+              {item.label}
+            </a>
+          ))}
         </nav>
         <div className="flex items-center gap-2">
           <BookingDialog>
             <DialogTrigger asChild>
-              <Button className="hidden sm:inline-flex bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow hover:opacity-90">
+              <Button className="hidden sm:inline-flex" variant="gradient">
                 Book Now
               </Button>
             </DialogTrigger>
