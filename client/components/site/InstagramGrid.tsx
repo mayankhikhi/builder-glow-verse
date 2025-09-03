@@ -27,7 +27,7 @@ export const InstagramGrid = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <Button variant="outline">Open Instagram</Button>
+          <Button variant="gradient">Open Instagram</Button>
         </a>
       </div>
       <div className="columns-2 md:columns-3 gap-4 [column-fill:_balance]">
@@ -36,10 +36,10 @@ export const InstagramGrid = () => {
             key={i}
             src={src}
             alt="Sweta Makeover work"
-            className="mb-4 w-full rounded-lg border object-cover"
+            className="mb-4 w-full rounded-xl border border-white/10 object-cover transition-transform duration-300 hover:scale-[1.02]"
             loading="lazy"
-          />
-        ))}
+          />)
+        )}
       </div>
       <p className="text-xs text-muted-foreground mt-4">
         Tip: Connect Zapier to auto-sync your Instagram feed here.
